@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GlowUp Teens | Healthy Lifestyle</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff0f6;
+    color:#5c2a43;
+    line-height:1.7;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#ff85b3;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffe5ef;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(255,182,193,0.4),rgba(255,182,193,0.4)),
+    url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    background:rgba(255,255,255,0.75);
+    padding:50px;
+    border-radius:25px;
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:60px;
+    color:#ff4f93;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero button{
+    padding:15px 35px;
+    border:none;
+    background:#ff4f93;
+    color:white;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    background:#ff1f75;
+    transform:scale(1.05);
+}
+
+/* GENERAL SECTIONS */
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:45px;
+    color:#ff4f93;
+    margin-bottom:40px;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card h3{
+    color:#ff4f93;
+    margin-bottom:15px;
+}
+
+/* LISTS */
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+/* FITNESS SCHEDULE */
+
+.schedule{
+    background:#ffd6e7;
+    padding:30px;
+    border-radius:20px;
+    margin-top:30px;
+}
+
+.schedule table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.schedule th,
+.schedule td{
+    border:2px solid white;
+    padding:15px;
+    text-align:center;
+}
+
+.schedule th{
+    background:#ff85b3;
+    color:white;
+}
+
+/* CONTACT */
+
+.contact-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+form{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border:none;
+    background:#ffe5ef;
+    border-radius:10px;
+}
+
+textarea{
+    height:150px;
+}
+
+form button{
+    background:#ff4f93;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.socials{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.socials a{
+    display:block;
+    margin:15px 0;
+    color:#ff4f93;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#ff85b3;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">GlowUp Teens</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#nutrition">Nutrition</a></li>
+        <li><a href="#fitness">Fitness</a></li>
+        <li><a href="#mental">Mental Health</a></li>
+        <li><a href="#recipes">Recipes</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME PAGE -->
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Healthy Lifestyle for Teens</h1>
+
+        <p>
+            Welcome to GlowUp Teens — your aesthetic guide to feeling healthy,
+            confident, energetic, and happy! Learn about fitness, nutrition,
+            self-care, healthy meals, mental wellness, and daily habits that
+            help teens glow from the inside out.
+        </p>
+
+        <button onclick="window.location.href='#about'">
+            Start Your Healthy Journey
+        </button>
+    </div>
+
+</section>
+
+<!-- ABOUT PAGE -->
+
+<section id="about">
+
+    <h2 class="section-title">About This Website</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Our Purpose</h3>
+
+                <p>
+                    This website was created to help teens build healthy habits
+                    in a fun and simple way. Many teenagers struggle with stress,
+                    unhealthy eating, poor sleep, and lack of exercise. GlowUp
+                    Teens encourages balance, positivity, and self-care.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Why Healthy Habits Matter</h3>
+
+                <p>
+                    Healthy habits improve energy, concentration, confidence,
+                    mood, sleep, and overall health. Teens who eat nutritious
+                    foods, stay active, and care for their mental health often
+                    perform better in school and feel happier every day.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NUTRITION PAGE -->
+
+<section id="nutrition">
+
+    <h2 class="section-title">Nutrition</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Healthy Food Choices</h3>
+
+                <ul>
+                    <li>Fresh fruits and vegetables</li>
+                    <li>Whole grain breads and cereals</li>
+                    <li>Lean proteins like chicken and eggs</li>
+                    <li>Healthy fats such as avocado and nuts</li>
+                    <li>Drink plenty of water daily</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Sample Meal Ideas</h3>
+
+                <ul>
+                    <li>Breakfast: Oatmeal with strawberries</li>
+                    <li>Lunch: Chicken wrap with veggies</li>
+                    <li>Dinner: Salmon with rice and broccoli</li>
+                    <li>Snack: Greek yogurt and berries</li>
+                    <li>Smoothies with banana and spinach</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Benefits of Balanced Eating</h3>
+
+                <p>
+                    Balanced eating helps your body grow strong and healthy.
+                    It improves focus, gives energy for sports and school,
+                    supports better sleep, strengthens immunity, and helps
+                    maintain a positive mood throughout the day.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FITNESS PAGE -->
+
+<section id="fitness">
+
+    <h2 class="section-title">Fitness</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Workout Ideas for Beginners</h3>
+
+                <ul>
+                    <li>15-minute morning stretches</li>
+                    <li>Walking or jogging</li>
+                    <li>Dance workouts</li>
+                    <li>Yoga for flexibility</li>
+                    <li>Simple bodyweight exercises</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Benefits of Exercise</h3>
+
+                <p>
+                    Exercise improves heart health, builds muscle strength,
+                    boosts confidence, reduces stress, improves sleep quality,
+                    and increases energy levels. Staying active also supports
+                    mental health and helps teens stay motivated.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="schedule">
+
+        <h3 style="text-align:center; margin-bottom:20px; color:#ff4f93;">
+            Weekly Workout Schedule
+        </h3>
+
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Workout</th>
+            </tr>
+
+            <tr>
+                <td>Monday</td>
+                <td>Cardio & Stretching</td>
+            </tr>
+
+            <tr>
+                <td>Tuesday</td>
+                <td>Yoga & Core Exercises</td>
+            </tr>
+
+            <tr>
+                <td>Wednesday</td>
+                <td>Dance Workout</td>
+            </tr>
+
+            <tr>
+                <td>Thursday</td>
+                <td>Strength Training</td>
+            </tr>
+
+            <tr>
+                <td>Friday</td>
+                <td>Outdoor Walk or Run</td>
+            </tr>
+
+            <tr>
+                <td>Saturday</td>
+                <td>Full Body Workout</td>
+            </tr>
+
+            <tr>
+                <td>Sunday</td>
+                <td>Rest & Self-Care</td>
+            </tr>
+        </table>
+
+    </div>
+
+</section>
+
+<!-- MENTAL HEALTH PAGE -->
+
+<section id="mental">
+
+    <h2 class="section-title">Mental Health</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Stress Management Tips</h3>
+
+                <ul>
+                    <li>Practice deep breathing</li>
+                    <li>Spend time outside</li>
+                    <li>Talk to trusted friends or family</li>
+                    <li>Limit screen time when stressed</li>
+                    <li>Keep a gratitude journal</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Importance of Sleep</h3>
+
+                <p>
+                    Teens need around 8–10 hours of sleep every night.
+                    Good sleep improves memory, mood, concentration,
+                    energy levels, and emotional health. Poor sleep
+                    can increase stress and reduce focus in school.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Self-Care Habits</h3>
+
+                <ul>
+                    <li>Drink enough water daily</li>
+                    <li>Take breaks when overwhelmed</li>
+                    <li>Read books or listen to music</li>
+                    <li>Practice positive affirmations</li>
+                    <li>Spend time doing hobbies you enjoy</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RECIPES PAGE -->
+
+<section id="recipes">
+
+    <h2 class="section-title">Healthy Recipes</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Easy Breakfast Ideas</h3>
+
+                <ul>
+                    <li>Fruit smoothie bowls</li>
+                    <li>Avocado toast</li>
+                    <li>Banana oatmeal pancakes</li>
+                    <li>Greek yogurt parfaits</li>
+                    <li>Peanut butter toast with banana</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1543332164-6e82f355badc?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Healthy Snacks</h3>
+
+                <ul>
+                    <li>Trail mix</li>
+                    <li>Apple slices with peanut butter</li>
+                    <li>Carrots and hummus</li>
+                    <li>Frozen yogurt bites</li>
+                    <li>Rice cakes with avocado</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Simple Dinner Recipes</h3>
+
+                <ul>
+                    <li>Chicken and vegetable stir fry</li>
+                    <li>Whole wheat pasta with veggies</li>
+                    <li>Grilled salmon with salad</li>
+                    <li>Turkey tacos</li>
+                    <li>Healthy homemade pizza</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT PAGE -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact-container">
+
+        <form>
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+        <div class="socials">
+
+            <h3 style="color:#ff4f93; margin-bottom:20px;">
+                Follow Us
+            </h3>
+
+            <p>
+                Stay connected for daily wellness tips, recipes,
+                motivation, and self-care inspiration!
+            </p>
+
+            <a href="#">💕 Instagram</a>
+            <a href="#">💕 TikTok</a>
+            <a href="#">💕 Pinterest</a>
+            <a href="#">💕 YouTube</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>
+        © 2026 GlowUp Teens | Healthy Lifestyle Website 💖
+    </p>
+</footer>
+
+</body>
+</html>
